@@ -8,7 +8,7 @@ class Record(models.Model):
     artist_name = models.CharField(max_length=50)
     record_name = models.CharField(max_length=50)
     genre = models.CharField(max_length=50)
-    record_logo = models.CharField(max_length=250)
+    record_logo = models.FileField()
 
     def get_absolute_url(self):
         print('reached')

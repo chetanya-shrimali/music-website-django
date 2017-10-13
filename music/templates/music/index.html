@@ -2,7 +2,7 @@
 
 {% block body %}
   {% for record in records %}
-    <img src="{{ record.record_logo }}" height="400px" width="400px"><br>
+    <img src="{{ record.record_logo.url }}" height="400px" width="400px"><br>
     <h3><a href="{% url 'music:record_detail' record.id %}"> {{ record.artist_name }} </a>
     <br></h3>
   {% endfor %}
