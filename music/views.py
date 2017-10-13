@@ -40,7 +40,7 @@ class RecordDelete(DeleteView):
 
 class UserFormView(View):
     form_class = UserForm
-    template_name = './registration_form'
+    template_name = 'music/registration_form.html'
 
     def get(self, request):
         form = self.form_class(None)
@@ -56,3 +56,10 @@ class UserFormView(View):
             password = form.cleaned_data['password']
             user.set_password(password)
             user.save()
+
+            user = authenticate(username=username, password=password)
+
+            if user is not None:
+                login(request, user)
+                return redirect('music:index')
+        return render(request, self.template_name, {'form': form})

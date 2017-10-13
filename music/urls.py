@@ -9,4 +9,5 @@ urlpatterns = [
     url(r'^add/$', views.RecordCreate.as_view(), name='add-record'),
     url(r'^(?P<pk>[0-9]+)/update/', views.RecordUpdate.as_view(), name='update-record'),
     # url(r'^record/(?P<pk>[0-9]+)/delete/', views.RecordDelete.as_view(), name='delete-record'),
+    url(r'^register/$', views.UserFormView.as_view(), name='register')
 ]
