@@ -1,5 +1,5 @@
 {% extends 'music/base.html' %}
-
+{% block title %} Details{% endblock %}
 {% block body %}
   {% for song in record.song_set.all %}
     {{ song.song_title }}<br>
